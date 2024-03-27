@@ -53,6 +53,9 @@ def main():
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=df['year'], y=df['population'], mode='lines+markers', name='Population'))
     fig.update_layout(title='Population Trend', xaxis_title='Year', yaxis_title='Population')
+
+    # Specify x-axis tick values to show only integer years
+    fig.update_xaxes(tickmode='array', tickvals=df['year'].unique(), tickformat='d')
     
     # Display the Plotly line plot
     st.plotly_chart(fig)
