@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Install pip
 sudo apt install python3-pip
 
@@ -5,6 +7,7 @@ sudo apt install python3-pip
 pip3 install sqlalchemy
 pip install psycopg2-binary
 pip3 install pandas
+pip3 install streamlit
 
 # EDIT THIS ACCORING YOUR DB CREDENTIALS IN YOUR VM ENV
 echo 'export DB_USERNAME="xxxxxxxx"' >> ~/.bashrc
@@ -14,3 +17,7 @@ echo 'export DB_PORT="xxxxxxxx"' >> ~/.bashrc
 
 # source the bash
 source ~/.bashrc
+
+# Verify that the variables were exported to bash correctly
+tail -n 10 ~/.bashrc 
+
