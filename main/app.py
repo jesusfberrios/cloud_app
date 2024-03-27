@@ -61,8 +61,8 @@ def main():
     st.plotly_chart(fig)
 
     # Display result as a DataFrame
-    st.subheader("Result:")
-    st.write(df)
+    # st.subheader("Result:")
+    # st.write(df)
 
 if __name__ == "__main__":
     main()
