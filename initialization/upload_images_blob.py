@@ -17,18 +17,21 @@ def upload_images_to_blob_storage(folder_path):
 
     # Upload each file to Blob Storage
     for file_name in files:
+        # Construct the destination blob name with the destination folder
+        destination_blob_name = f"maps/{file_name}"
+
         # Construct the BlobClient for the file
-        blob_client = container_client.get_blob_client(file_name)
+        blob_client = container_client.get_blob_client(destination_blob_name)
 
         # Upload the file to Blob Storage
         with open(os.path.join(folder_path, file_name), "rb") as data:
-            blob_client.upload_blob(data)
+            blob_client.upload_blob(data, overwrite=True)
 
     print("Upload completed.")
 
 if __name__ == "__main__":
     # Specify the path to the folder containing the images
-    folder_path = "maps"
+    folder_path = '../app_images'
 
     # Call the function to upload images to Blob Storage
     upload_images_to_blob_storage(folder_path)
