@@ -24,7 +24,7 @@ def create_table_from_csv():
     # Create a table named "population" using the DataFrame's schema
     df.to_sql('population', con=engine, if_exists='replace', index=False)
     
-    print("Table 'population' created successfully in the 'canada' schema.")
+    print("Table 'population' created successfully in the 'public' schema.")
 
     conn.close()
     print("Connection closed")
