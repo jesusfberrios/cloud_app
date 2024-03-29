@@ -14,6 +14,8 @@ echo 'export DB_PASSWORD="xxxxxxxx"' >> ~/.bashrc
 echo 'export DB_HOST="xxxxxxxx"' >> ~/.bashrc
 echo 'export DB_PORT="xxxxxxxx"' >> ~/.bashrc
 echo 'export DB="xxxxxxxx"' >> ~/.bashrc
+echo 'export BLOB_STRING="xxxxxxxx"' >> ~/.bashrc
+echo 'export BLOB_CONTAINER_NAME="xxxxxxxx"' >> ~/.bashrc
 
 # source the bash
 source ~/.bashrc
