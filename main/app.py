@@ -64,29 +64,29 @@ def main():
     # Plot the data using Plotly
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=df['year'], y=df['population'], mode='lines+markers', name='Population'))
-    fig.update_layout(title='Population Trend', xaxis_title='Year', yaxis_title='Population')
+    fig.update_layout(title='Population Trend', xaxis_title='Year', yaxis_title='Population',height=500)
 
     # Specify x-axis tick values to show only integer years
     fig.update_xaxes(tickmode='array', tickvals=df['year'].unique(), tickformat='d')
     
-    # # Display the Plotly line plot
-    # st.plotly_chart(fig)
+    # Display the Plotly line plot
+    st.plotly_chart(fig)
 
     # Download image blob
     blob_name = f'maps/{province}.jpeg'
     image_data = download_image_blob(blob_name)
 
-    # # Display image
-    # st.subheader("Province Map:")
-    # st.image(BytesIO(image_data))
+    # Display image
+    st.subheader("Province Map:")
+    st.image(BytesIO(image_data),width=300)
 
-    # Display Plotly chart and image side by side
-    col1, col2 = st.columns([1, 1])  # Split the layout into two columns
-    with col1:
-        st.plotly_chart(fig)  # Display Plotly chart in the first column
-    with col2:
-        st.subheader("Province Map:")
-        st.image(BytesIO(image_data))  # Display image in the second column
+    # # Display Plotly chart and image side by side
+    # col1, col2 = st.columns([1, 1])  # Split the layout into two columns
+    # with col1:
+    #     st.plotly_chart(fig)  # Display Plotly chart in the first column
+    # with col2:
+    #     st.subheader("Province Map:")
+    #     st.image(BytesIO(image_data))  # Display image in the second column
 
 if __name__ == "__main__":
     main()
