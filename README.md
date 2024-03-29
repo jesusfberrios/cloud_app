@@ -21,7 +21,7 @@ Deploy a postgres database with the minimal configurations: Burstable, 1 vCores 
 ## Storage
 Create an Azure storage account and test that files can be uploaded to the Blob Container in the Storage Browser blade. It is also relevant to check if public access is allowed.
 
-## Application deployment
+## Application Initialization and Data Ingestion
 ### VM: Initial configuration
 Log into the VM using ssh and firstly execute ```sudo apt update -y```. Afterwards, clone this repository using ```git clone <this_repository_url>``` or using your preferred method.
 
@@ -40,3 +40,10 @@ Additionally, if the database connection was successfully configured from a loca
 <img src="image-3.png" alt="alt text" width="300">
 
 ### Storage
+Fron *initialization/* folder, execute ```python3 upload_images_blob.py``` this will upload the images from *app_images/* folder from the repository to your Azure Blob container. The result in python should look as below: <br/>
+<img src="image-4.png" alt="alt text" width="400">
+
+Furthermore, the successful upload of the files can be verified in the Container webpage from Azure:<br/>
+<img src="image-5.png" alt="alt text" width="300">
+
+## Application Deployment
