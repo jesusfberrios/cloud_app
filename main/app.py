@@ -50,10 +50,10 @@ def download_image_blob(blob_name):
 
 # Main Streamlit app
 def main():
-    st.title("Population Data by Province")
+    st.title("Population Data by Location")
     
     # Province selection dropdown
-    province = st.selectbox("Select a province:", provinces)
+    province = st.selectbox("Select a Location:", provinces)
     
     # Generate SQL statement based on selected province
     sql_statement = generate_sql_statement(province)
@@ -77,7 +77,7 @@ def main():
     image_data = download_image_blob(blob_name)
 
     # Display image
-    st.subheader("Province Map:")
+    st.subheader("Location Map:")
     st.image(BytesIO(image_data),width=300)
 
     # # Display Plotly chart and image side by side
