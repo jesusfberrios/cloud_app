@@ -34,7 +34,7 @@ Once the initialization is completed, the required libraries are installed and t
 
 ### VM/Database: Insert information to table
 Now that the access VM->Database was ensured, the next step is to insert the data that will be used by the application to show to the end user. Proceed to execute ```python3 create_table.py```, the result should be as shown below:<br/>
-<img src="image-2.png" alt="alt text" width="300">
+<img src="image-2.png" alt="alt text" width="400">
 
 Additionally, if the database connection was successfully configured from a local machine, the data can also queried by a database client:<br/>
 <img src="image-3.png" alt="alt text" width="300">
