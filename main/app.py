@@ -3,6 +3,8 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 import os
 import plotly.graph_objs as go
+from azure.storage.blob import BlobServiceClient
+from io import BytesIO
 
 # Define a list of provinces
 provinces = ["Canada", "Newfoundland and Labrador", "Prince Edward Island", "Nova Scotia", "New Brunswick", "Quebec", "Ontario", "Manitoba", "Saskatchewan", "Alberta", "British Columbia", "Yukon", "Northwest Territories", "Nunavut"]
@@ -37,6 +39,15 @@ def execute_sql_statement(sql_statement):
     return df
 
 
+def download_image_blob(blob_name):
+    blob_string = os.environ.get('BLOB_STRING')
+    blob_container_name = os.environ.get('BLOB_CONTAINER_NAME')
+
+    blob_service_client = BlobServiceClient.from_connection_string(blob_string)
+    blob_client = blob_service_client.get_blob_client(container=blob_container_name, blob=blob_name)
+    blob_data = blob_client.download_blob().readall()
+    return blob_data
+
 # Main Streamlit app
 def main():
     st.title("Population Data by Province")
@@ -61,9 +72,13 @@ def main():
     # Display the Plotly line plot
     st.plotly_chart(fig)
 
-    # Display result as a DataFrame
-    # st.subheader("Result:")
-    # st.write(df)
+    # Download image blob
+    blob_name = f'maps/{province}.jpeg'
+    image_data = download_image_blob(blob_name)
+
+    # Display image
+    st.subheader("Province Map:")
+    st.image(BytesIO(image_data))
 
 if __name__ == "__main__":
     main()

@@ -3,3 +3,4 @@ psycopg2-binary==2.9.9
 streamlit==1.32.2
 sqlalchemy==2.0.29
 plotly==5.20.0
+azure-storage-blob==12.19.1
