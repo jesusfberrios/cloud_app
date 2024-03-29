@@ -4,6 +4,7 @@
 This repository is intended to deploy a web application hosted in a Cloud VM which connects to a Database and a Storage service. The infrastructure was deployed in Azure; however, it can be replicated in other clouds by changing the connection libraries/parameters. All the dependencies are in the *install_reqs.sh* and *requirements.txt* files. The infrastructure's topology is shown below.
 ![alt text](readme_images/image.png)
 
+A web application is deployed in the **VM**, using a python script with streamlit library with the endpoint ***YOUR_VM_PUBLIC_IP:8501***. The app provided the interface to show the population by location in Canada, and when a value is provided on the selectbox it generates a query to the **Database** that provides with the necessary data to plot the chart. Additionally, the map of the location is shown by getting corresponding image to the queried location from the **Storage**.
 
 It is important to mention that the login credentials for the database and storage are stored in the environment variables of the machine, thus they are not shared through this repository. Moreover, this deployment is focused on quick testing, consequently, further security concerns such as secure SSL connections should be covered for a production environment as they were not considered for this particular case.
 
