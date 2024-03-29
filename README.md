@@ -29,8 +29,14 @@ After the repository is cloned, the file *install_reqs.sh* can be accessed and t
 * Execute the commands one-by-one, and for the ```export``` commands just change the variables' values in correspondence to your **Database** and **Storage** credentials.
 * Edit the credentials in the *install_reqs.sh* file and execute ```./install_reqs.sh```
 
-Once the initialization is completed, the required libraries are installed and the credential values declared. Hence, the connection VM->database can be tested by using ```python3 dummy_query_test.py```. The resoul should be as the one shown below:
+Once the initialization is completed, the required libraries are installed and the credential values declared. Hence, the connection VM->database can be tested by using ```python3 dummy_query_test.py```. The resoul should be as the one shown below: <br/>
 ![alt text](image-1.png)
 
 ### VM/Database: Insert information to table
+Now that the access VM->Database was ensured, the next step is to insert the data that will be used by the application to show to the end user. Proceed to execute ```python3 create_table.py```, the result should be as shown below:<br/>
+![alt text](image-2.png)
 
+Additionally, if the database connection was successfully configured from a local machine, the data can also queried by a database client:<br/>
+![alt text](image-3.png)
+
+### Storage
