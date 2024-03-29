@@ -9,13 +9,14 @@ def create_table_from_csv():
     password = os.environ.get('DB_PASSWORD')
     host = os.environ.get('DB_HOST')
     port = os.environ.get('DB_PORT')
+    db = os.environ.get('DB')
     
     
     # Read the CSV file into a pandas DataFrame
     df = pd.read_csv("population.csv")
     
     # Create an engine to connect to your PostgreSQL database
-    engine = create_engine(f'postgresql://{username}:{password}@{host}:{port}/{username}')
+    engine = create_engine(f'postgresql://{username}:{password}@{host}:{port}/{db}')
     
     # Connect to the engine
     conn = engine.connect()

@@ -8,9 +8,10 @@ def send_dummy_query():
     password = os.environ.get('DB_PASSWORD')
     host = os.environ.get('DB_HOST')
     port = os.environ.get('DB_PORT')
+    db = os.environ.get('DB')
 
     # Create an engine to connect to your PostgreSQL database
-    engine = create_engine(f'postgresql://{username}:{password}@{host}:{port}/{username}')
+    engine = create_engine(f'postgresql://{username}:{password}@{host}:{port}/{db}')
     
     # Connect to the engine
     conn = engine.connect()
