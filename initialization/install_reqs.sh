@@ -13,6 +13,7 @@ echo 'export DB_USERNAME="xxxxxxxx"' >> ~/.bashrc
 echo 'export DB_PASSWORD="xxxxxxxx"' >> ~/.bashrc
 echo 'export DB_HOST="xxxxxxxx"' >> ~/.bashrc
 echo 'export DB_PORT="xxxxxxxx"' >> ~/.bashrc
+echo 'export DB="xxxxxxxx"' >> ~/.bashrc
 
 # source the bash
 source ~/.bashrc
