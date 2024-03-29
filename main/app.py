@@ -78,7 +78,7 @@ def main():
 
     # Display image
     st.subheader("Province Map:")
-    st.image(BytesIO(image_data),height=300)
+    st.image(BytesIO(image_data),width=300)
 
     # # Display Plotly chart and image side by side
     # col1, col2 = st.columns([1, 1])  # Split the layout into two columns
