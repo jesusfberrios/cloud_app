@@ -6,7 +6,7 @@ sudo apt update -y
 sudo apt install python3-pip -y
 
 # Install python libraries
-pip3 install -r requirements.txt -y
+pip3 install -r requirements.txt
 
 # EDIT THIS ACCORING YOUR DB CREDENTIALS IN YOUR VM ENV
 echo 'export DB_USERNAME="xxxxxxxx"' >> ~/.bashrc
